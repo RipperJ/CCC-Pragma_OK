@@ -16,16 +16,21 @@
   >但请注意：**您必须保持sobel.cpp,sobel.h的文件名，以及顶层函数“void sobel(PIXEL* src, PIXEL* dst, int rows, int cols)”不变。**
 
   2）项目要求  
-  >在本项目中，输入的图像已经被转化为了一个大小为720\*1280的1D array **src**。**Sobel Filter统一不做padding**，这样经过滤波后得到的输出**dst**是一个大小为718\*1278的1D array。在滤波过程中，框架代码sobel3x3_kernel函数中使用了3*3的kernel：  
+  >在本项目中，输入的图像已经被转化为了一个大小为720\*1280的1D array **src**。**Sobel Filter统一不做padding**，这样经过滤波后得到的输出**dst**是一个大小为718\*1278的1D array。输入矩阵和输出矩阵都是按行展开的。在滤波过程中，框架代码sobel3x3_kernel函数中使用了3*3的kernel：  
   >GX=[−1 0 1 −2 0 2 −1 0 1]∗ I  
   >Gy=[−1 −2 −1 0 0 0 1 2 1]∗ I    
-  >您可以在函数Gradient_X以及Gradient_Y实现具体功能。  
-  >在设计完成后，您可以使用我们提供的sobel_test.cpp文件进行基本功能测试。**在HLS优化的过程中，请务必将优化指令设置为pragma写入c++代码中。**
+  >
+  >**您可以在函数Gradient_X以及Gradient_Y实现具体功能，且需保证Gradient_X以及Gradient_Y的值为0到255之间的整数（如果小于0，gradient取0，如果大于255，gradient取255）。**<br>
+  >**总gradient仅需将Gradient_X和Gradient_Y直接相加即可，总gradient的值也应保证是0到255之间的整数。**<br>
+  >
+  >在设计完成后，您可以使用我们提供的sobel_test.cpp文件进行基本功能测试。但是，由于在评分时会统一使用评分系统内部的sobel_test.cpp，因此请不要将设计写在sobel_test.cpp中，sobel_test.cpp文件也无需提交。
+  
+  >**在HLS优化的过程中，请务必将优化指令设置为pragma写入c++代码中。**
   
   >比赛不需要生成最终bit文件，仅考察算法实现功能和综合报告的性能，能完成co-sim即可。
 	
   3）提交程序
-  >您仅需提交cpp文件和h文件。请将所有cpp和h文件压缩为一个压缩包soebl.zip，在页面下方您的解答处点击“上传代码”按钮进行提交，稍待片刻即可在文本框下方得知您的设计是否通过了基本功能测试。延迟、面积等性能指标则可在历史提交记录中点击版本号详细查看。
+  >您仅需提交cpp文件和h文件。请将除sobel_test.cpp以外的所有cpp和h文件压缩为一个压缩包sobel.zip，在页面下方您的解答处点击“上传代码”按钮进行提交，稍待片刻即可在文本框下方得知您的设计是否通过了基本功能测试。延迟、面积等性能指标则可在历史提交记录中点击版本号详细查看。
   
   4）评分规则
   >性能公式为：<br>

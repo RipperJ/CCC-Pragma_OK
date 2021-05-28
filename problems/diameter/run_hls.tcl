@@ -1,5 +1,5 @@
 #
-# Copyright 2019 Xilinx, Inc.
+# Copyright 2019-2020 Xilinx, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,7 +19,8 @@ set CSIM 1
 set CSYNTH 1
 set COSIM 1
 
-set PROJ "ecc_test.prj"
+
+set PROJ "diameter.prj"
 set SOLN "solution1"
 
 if {![info exists CLKP]} {
@@ -28,9 +29,11 @@ if {![info exists CLKP]} {
 
 open_project -reset $PROJ
 
-add_files "top.cpp" -cflags "-I."
-add_files -tb "test.cpp" -cflags "-I."
-set_top test
+add_files "top.cpp" -cflags "-I./"
+add_files -tb "test.cpp" -cflags "-I./"
+add_files -tb "./data/data-csr-offset.mtx"
+add_files -tb "./data/data-csr-indicesweights.mtx"
+set_top dut
 
 open_solution -reset $SOLN
 
@@ -39,10 +42,9 @@ open_solution -reset $SOLN
 
 set_part $XPART
 create_clock -period $CLKP
-set_clock_uncertainty 1.05
 
 if {$CSIM == 1} {
-  csim_design -ldflags "-lcrypto -lssl"
+  csim_design
 }
 
 if {$CSYNTH == 1} {
@@ -50,7 +52,7 @@ if {$CSYNTH == 1} {
 }
 
 if {$COSIM == 1} {
-  cosim_design -ldflags "-lcrypto -lssl"
+  cosim_design
 }
 
 exit
