@@ -12,13 +12,6 @@ using namespace std;
 
 int main () {
   
-  // long long test_ll = 0;
-  // short int test_si1 = 0x1234, test_si2 = 0x5678, test_si3 = 0x9012;
-  // test_ll = ((unsigned long long)test_si1 << 32) | ((unsigned long long)test_si2 << 16) | (unsigned long long)test_si3;
-  // fprintf(stdout, "sizeof(test_ll)=%d, sizeof(test_si)=%d\n", sizeof(test_ll), sizeof(test_si1));
-  // fprintf(stdout, "test_ll=%llx\n", test_ll);
-
-
   short int src[HEIGHT*WIDTH];
   short int dst[(HEIGHT-2)*(WIDTH-2)];
 
