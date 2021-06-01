@@ -1,0 +1,341 @@
+#: 3; @: -exec vitis_hls tcl_script.tcl; 1: -exec RDI_ARGS: 
+RDI_PROG=vitis_hls
+#: 1; @: tcl_script.tcl; 1: tcl_script.tcl RDI_ARGS: 
+Final RDI_ARGS: tcl_script.tcl
+RDI_JAVAROOT: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2
+RDI_DATADIR: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/data
+DEPENDENCY: VITIS_HLS_SETUP
+RDI_LIBDIR: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o
+RDI_BINDIR: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin
+LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/../lnx64/tools/dot/lib
+:tcl_script.tcl
+@: tcl_script.tcl
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'lduac@ust.hk' on host 'ecelvd703.ece.local' (Linux_x86_64 version 4.15.0-142-generic) on Tue Jun 01 16:50:55 HKT 2021
+INFO: [HLS 200-10] On os Ubuntu 16.04.7 LTS
+INFO: [HLS 200-10] In directory '/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5'
+Sourcing Tcl script 'tcl_script.tcl'
+INFO: [HLS 200-1510] Running: open_project sobel 
+INFO: [HLS 200-10] Opening project '/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel'.
+INFO: [HLS 200-1510] Running: set_top sobel 
+INFO: [HLS 200-1510] Running: add_files sobel.cpp 
+INFO: [HLS 200-10] Adding design file 'sobel.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb data.txt -cflags -I. 
+INFO: [HLS 200-10] Adding test bench file 'data.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb dst.txt -cflags -I. 
+INFO: [HLS 200-10] Adding test bench file 'dst.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb sobel_test.cpp -cflags -I. 
+INFO: [HLS 200-10] Adding test bench file 'sobel_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_alignment_byte_size=0
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_max_widen_bitwidth=0
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_offset=off
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_rtl -register_reset_num=0
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../sobel.cpp in debug mode
+   Generating csim.exe
+*******************************************
+PASS: The output matches the golden output!
+*******************************************
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.84 seconds. CPU system time: 0.35 seconds. Elapsed time: 0.9 seconds; current allocated memory: 224.225 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.446 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: sobel.cpp:27:9
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:25:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:25:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.14 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.27 seconds; current allocated memory: 225.965 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+WARNING: [HLS 214-185] The resource pragma (storage) on function argument, in 'call' is unsupported (sobel.cpp:26:38)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.69 seconds. CPU system time: 0.32 seconds. Elapsed time: 4.01 seconds; current allocated memory: 227.616 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.616 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 229.166 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 228.298 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_57_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_64_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_65_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window_a' (sobel.cpp:31) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column_a' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer_a' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window_b' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column_b' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer_b' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window_a.0' (sobel.cpp:31) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window_a.1' (sobel.cpp:31) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window_a.2' (sobel.cpp:31) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window_b.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window_b.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window_b.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window_a.0' (sobel.cpp:31) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window_a.1' (sobel.cpp:31) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window_a.2' (sobel.cpp:31) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window_b.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window_b.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window_b.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 249.062 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_a[1]' (sobel.cpp:58:42)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_b[1]' (sobel.cpp:59:42)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_a[2]' (sobel.cpp:61:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer_b[2]' (sobel.cpp:62:41)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 242.243 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln50) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 243.012 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 243.821 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 245.037 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_a_1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_a_2_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.48 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.52 seconds; current allocated memory: 255.347 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sobel.
+INFO: [VLOG 209-307] Generating Verilog RTL for sobel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 226.30 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 6.2 seconds. CPU system time: 0.49 seconds. Elapsed time: 6.71 seconds; current allocated memory: 255.515 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_sobel.cpp
+   Compiling sobel.cpp_pre.cpp.tb.cpp
+   Compiling sobel_test.cpp_pre.cpp.tb.cpp
+   Compiling apatb_sobel_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+*******************************************
+PASS: The output matches the golden output!
+*******************************************
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+#: 30; @: -exec xelab xil_defaultlib.apatb_sobel_top glbl -prj sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -exec RDI_ARGS: 
+RDI_PROG=xelab
+#: 28; @: xil_defaultlib.apatb_sobel_top glbl -prj sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: xil_defaultlib.apatb_sobel_top RDI_ARGS: 
+#: 27; @: glbl -prj sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: glbl RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 26; @: -prj sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -prj RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 25; @: sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: sobel.prj RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 24; @: -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 23; @: smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: smartconnect_v1_0 RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 22; @: -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 21; @: axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: axi_protocol_checker_v1_1_12 RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 20; @: -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 19; @: axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: axi_protocol_checker_v1_1_13 RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 18; @: -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 17; @: axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: axis_protocol_checker_v1_1_11 RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 16; @: -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 15; @: axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: axis_protocol_checker_v1_1_12 RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 14; @: -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 13; @: xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: xil_defaultlib RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 12; @: -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 11; @: unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: unisims_ver RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 10; @: -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 9; @: xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: xpm RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 8; @: -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 7; @: floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: floating_point_v7_0_18 RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 6; @: -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: -L RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 5; @: floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel; 1: floating_point_v7_1_11 RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 4; @: --lib ieee_proposed=./ieee_proposed -s sobel; 1: --lib RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 3; @: ieee_proposed=./ieee_proposed -s sobel; 1: ieee_proposed=./ieee_proposed RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 2; @: -s sobel; 1: -s RDI_ARGS: xil_defaultlib.apatb_sobel_top
+#: 1; @: sobel; 1: sobel RDI_ARGS: xil_defaultlib.apatb_sobel_top
+Final RDI_ARGS: xil_defaultlib.apatb_sobel_top
+RDI_JAVAROOT: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+RDI_DATADIR: /home/lduac/Software/Xilinx/Vivado/2020.2/data
+RDI_LIBDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o
+RDI_BINDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/bin
+LD_LIBRARY_PATH: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/gdb_v7_2:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/dot-2.28/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/bin:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib//server:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/lib/csim:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v6_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/csim:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib
+:xil_defaultlib.apatb_sobel_top glbl -prj sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel
+@: xil_defaultlib.apatb_sobel_top glbl -prj sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/lduac/Software/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_sobel_top glbl -prj sobel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s sobel 
+Multi-threading is on. Using 30 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sobel_buffer_a_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sobel_buffer_a_1_ram
+INFO: [VRFC 10-311] analyzing module sobel_buffer_a_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/AESL_automem_src.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_src
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/AESL_automem_dst.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_dst
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sobel.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_sobel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sobel_mul_mul_10ns_12ns_20_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sobel_mul_mul_10ns_12ns_20_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module sobel_mul_mul_10ns_12ns_20_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sobel_buffer_a_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sobel_buffer_a_2_ram
+INFO: [VRFC 10-311] analyzing module sobel_buffer_a_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sobel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sobel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sample_manager.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/df_process_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/df_process_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/df_fifo_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/dump_file_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [df_fifo_interface.sv:4]
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/df_fifo_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [df_fifo_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/csv_file_dump.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sample_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/nodf_module_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/nodf_module_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/nodf_module_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/nodf_module_interface.sv:4]
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.sobel_buffer_a_1_ram
+Compiling module xil_defaultlib.sobel_buffer_a_1(DataWidth=16,Ad...
+Compiling module xil_defaultlib.sobel_buffer_a_2_ram
+Compiling module xil_defaultlib.sobel_buffer_a_2(DataWidth=16,Ad...
+Compiling module xil_defaultlib.sobel_mul_mul_10ns_12ns_20_4_1_D...
+Compiling module xil_defaultlib.sobel_mul_mul_10ns_12ns_20_4_1(I...
+Compiling module xil_defaultlib.sobel
+Compiling module xil_defaultlib.AESL_automem_src
+Compiling module xil_defaultlib.AESL_automem_dst
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_sobel_top
+Compiling module work.glbl
+Built simulation snapshot sobel
+#: 7; @: -exec wbtcv -mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace; 1: -exec RDI_ARGS: 
+RDI_PROG=wbtcv
+#: 5; @: -mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace; 1: -mode RDI_ARGS: 
+#: 4; @: batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace; 1: batch RDI_ARGS: -mode
+#: 3; @: -source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace; 1: -source RDI_ARGS: -mode
+#: 2; @: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace; 1: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl RDI_ARGS: -mode
+#: 1; @: -notrace; 1: -notrace RDI_ARGS: -mode
+Final RDI_ARGS: -mode
+RDI_JAVAROOT: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+RDI_DATADIR: /home/lduac/Software/Xilinx/Vivado/2020.2/data
+RDI_LIBDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o
+RDI_BINDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/bin
+LD_LIBRARY_PATH: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/javafx-sdk-11.0.2/lib:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/lib//server:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/gdb_v7_2:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/dot-2.28/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/bin:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib//server:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/lib/csim:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v6_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/csim:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib
+:-mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace
+@: -mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Jun  1 16:51:16 2021...
+#: 6; @: -exec xsim --noieeewarnings sobel -tclbatch sobel.tcl; 1: -exec RDI_ARGS: 
+RDI_PROG=xsim
+#: 4; @: --noieeewarnings sobel -tclbatch sobel.tcl; 1: --noieeewarnings RDI_ARGS: 
+#: 3; @: sobel -tclbatch sobel.tcl; 1: sobel RDI_ARGS: --noieeewarnings
+#: 2; @: -tclbatch sobel.tcl; 1: -tclbatch RDI_ARGS: --noieeewarnings
+#: 1; @: sobel.tcl; 1: sobel.tcl RDI_ARGS: --noieeewarnings
+Final RDI_ARGS: --noieeewarnings
+RDI_JAVAROOT: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+RDI_DATADIR: /home/lduac/Software/Xilinx/Vivado/2020.2/data
+RDI_LIBDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o
+RDI_BINDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/bin
+LD_LIBRARY_PATH: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/gdb_v7_2:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/dot-2.28/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/bin:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib//server:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/lib/csim:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v6_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/csim:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib
+:--noieeewarnings sobel -tclbatch sobel.tcl
+@: --noieeewarnings sobel -tclbatch sobel.tcl
+
+****** xsim v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/sobel/xsim_script.tcl
+# xsim {sobel} -autoloadwcfg -tclbatch {sobel.tcl}
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source sobel.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "155000"
+// RTL Simulation : 1 / 1 [100.00%] @ "4615405000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 4615445 ns : File "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/sim/verilog/sobel.autotb.v" Line 303
+run: Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:10 . Memory (MB): peak = 2385.262 ; gain = 0.000 ; free physical = 39495 ; free virtual = 81939
+## quit
+INFO: [Common 17-206] Exiting xsim at Tue Jun  1 16:51:35 2021...
+INFO: [COSIM 212-316] Starting C post checking ...
+*******************************************
+PASS: The output matches the golden output!
+*******************************************
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 32.12 seconds. CPU system time: 2.03 seconds. Elapsed time: 32.71 seconds; current allocated memory: 258.550 MB.
+INFO: [HLS 200-112] Total CPU user time: 42.03 seconds. Total CPU system time: 3.47 seconds. Total elapsed time: 42.39 seconds; peak allocated memory: 255.347 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Tue Jun  1 16:51:37 2021...
