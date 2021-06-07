@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="sobel.cpp" path="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="sobel_test.cpp" path="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel_test.cpp"/>
+    <originFiles name="dst.txt" path="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/dst.txt"/>
+    <originFiles name="data.txt" path="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/data.txt"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

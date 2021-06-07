@@ -1,0 +1,5 @@
+sobel_buffer_1
+sobel_buffer_2
+sobel_control_s_axi
+sobel_gmem_m_axi
+sobel

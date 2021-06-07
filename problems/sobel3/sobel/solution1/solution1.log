@@ -1,0 +1,1872 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.26 seconds. CPU system time: 0.31 seconds. Elapsed time: 1.12 seconds; current allocated memory: 223.135 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 223.306 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:26:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:26:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.14 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.26 seconds; current allocated memory: 224.993 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-178] Inlining function 'sobel_kernel(short (*) [3])' into 'sobel(short*, short*, int, int)' (sobel.cpp:27:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.45 seconds. CPU system time: 0.32 seconds. Elapsed time: 3.76 seconds; current allocated memory: 226.262 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 226.263 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 227.686 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 226.856 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_39_2' (sobel.cpp:36) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_44_3' (sobel.cpp:36) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_49_4' (sobel.cpp:36) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_50_5' (sobel.cpp:36) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_11_1' (sobel.cpp:11) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_12_2' (sobel.cpp:9) in function 'sobel' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:31) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_kernel'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_kernel'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_kernel'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_kernel'  in dimension 2 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:29) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:29) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:29) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-11] Balancing expressions in function 'sobel' (sobel.cpp:26)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 247.462 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_38_1' (sobel.cpp:36:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:45:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:47:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_38_1_VITIS_LOOP_39_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 240.261 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln39) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_38_1_VITIS_LOOP_39_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_38_1_VITIS_LOOP_39_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 240.864 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 241.451 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 242.323 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_2_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.18 seconds; current allocated memory: 251.239 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sobel.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.83 seconds. CPU system time: 0.25 seconds. Elapsed time: 0.83 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.198 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:30:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:30:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.12 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.22 seconds; current allocated memory: 225.728 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.53 seconds. CPU system time: 0.29 seconds. Elapsed time: 3.82 seconds; current allocated memory: 227.026 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.027 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.352 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.600 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_43_2' (sobel.cpp:40) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_48_3' (sobel.cpp:40) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_53_4' (sobel.cpp:40) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_54_5' (sobel.cpp:40) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:33) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.202 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_42_1' (sobel.cpp:40:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:49:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:51:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 250.533 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 250.895 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 251.184 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln43) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 251.496 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 251.917 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 252.291 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.89 seconds. CPU system time: 0.22 seconds. Elapsed time: 0.86 seconds; current allocated memory: 224.026 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.200 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:30:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:30:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.14 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.21 seconds; current allocated memory: 225.745 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.51 seconds. CPU system time: 0.28 seconds. Elapsed time: 3.81 seconds; current allocated memory: 226.980 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 226.981 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.364 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.590 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_43_2' (sobel.cpp:40) in function 'sobel' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sobel_kernel' (sobel.cpp:3).
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_48_3' (sobel.cpp:40) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_53_4' (sobel.cpp:40) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_54_5' (sobel.cpp:40) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_15_1' (sobel.cpp:15) in function 'sobel_kernel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_16_2' (sobel.cpp:10) in function 'sobel_kernel' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_kernel'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_kernel'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_kernel'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_kernel'  in dimension 2 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-11] Balancing expressions in function 'sobel_kernel' (sobel.cpp:3)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 248.191 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_42_1' (sobel.cpp:40:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:49:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:51:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 250.562 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 250.931 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 251.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln43) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 251.523 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 251.944 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 252.329 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.85 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.86 seconds; current allocated memory: 224.026 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.200 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:30:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:30:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.12 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.21 seconds; current allocated memory: 225.730 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.37 seconds. CPU system time: 0.3 seconds. Elapsed time: 3.67 seconds; current allocated memory: 227.027 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.028 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.353 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.601 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_43_2' (sobel.cpp:40) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_48_3' (sobel.cpp:40) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_53_4' (sobel.cpp:40) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_54_5' (sobel.cpp:40) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:33) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:33) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.203 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_42_1' (sobel.cpp:40:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:49:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:51:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 250.534 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.04 seconds; current allocated memory: 250.897 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 251.185 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln43) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_42_1_VITIS_LOOP_43_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 251.497 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 251.918 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 252.292 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.83 seconds. CPU system time: 0.28 seconds. Elapsed time: 0.86 seconds; current allocated memory: 240.020 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 240.193 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:32:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:32:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.13 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.25 seconds; current allocated memory: 241.723 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.43 seconds. CPU system time: 0.31 seconds. Elapsed time: 3.74 seconds; current allocated memory: 243.021 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 243.022 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 244.348 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 243.599 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_45_2' (sobel.cpp:42) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_50_3' (sobel.cpp:42) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_4' (sobel.cpp:42) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_56_5' (sobel.cpp:42) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:39) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:35) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 264.201 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_44_1' (sobel.cpp:42:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:51:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:53:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 266.494 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 266.847 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 267.124 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln45) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 267.437 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 267.858 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 268.213 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.85 seconds. CPU system time: 0.23 seconds. Elapsed time: 0.82 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:32:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:32:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.15 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.21 seconds; current allocated memory: 225.729 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.37 seconds. CPU system time: 0.27 seconds. Elapsed time: 3.65 seconds; current allocated memory: 227.026 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.027 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.354 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.604 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_45_2' (sobel.cpp:42) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_50_3' (sobel.cpp:42) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_4' (sobel.cpp:42) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_56_5' (sobel.cpp:42) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:39) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:35) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.206 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_44_1' (sobel.cpp:42:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:51:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:53:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 250.529 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 250.885 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 251.165 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln45) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 251.477 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 251.899 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 252.259 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.85 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.83 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:32:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:32:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.12 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.23 seconds; current allocated memory: 225.697 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.52 seconds. CPU system time: 0.29 seconds. Elapsed time: 3.8 seconds; current allocated memory: 227.011 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 227.012 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.337 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.585 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_45_2' (sobel.cpp:42) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_50_3' (sobel.cpp:42) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_4' (sobel.cpp:42) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_56_5' (sobel.cpp:42) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:39) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:35) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:35) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.186 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_44_1' (sobel.cpp:42:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:51:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:53:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 250.478 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 250.847 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 251.108 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln45) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_44_1_VITIS_LOOP_45_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 251.421 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 251.842 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 252.197 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.09 seconds. CPU system time: 0.38 seconds. Elapsed time: 0.94 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:34:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:34:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.12 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.23 seconds; current allocated memory: 225.697 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.47 seconds. CPU system time: 0.27 seconds. Elapsed time: 3.74 seconds; current allocated memory: 227.011 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.012 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.340 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.593 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_47_2' (sobel.cpp:44) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_52_3' (sobel.cpp:44) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_57_4' (sobel.cpp:44) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_58_5' (sobel.cpp:44) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:39) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:41) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:37) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:37) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:37) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:37) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:37) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.201 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_46_1' (sobel.cpp:44:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:53:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:55:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_46_1_VITIS_LOOP_47_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 250.486 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 250.852 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 251.111 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln47) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_46_1_VITIS_LOOP_47_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_46_1_VITIS_LOOP_47_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 251.424 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 251.845 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 252.193 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.84 seconds. CPU system time: 0.23 seconds. Elapsed time: 0.84 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.14 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.22 seconds; current allocated memory: 225.729 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.4 seconds. CPU system time: 0.31 seconds. Elapsed time: 3.71 seconds; current allocated memory: 227.026 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.027 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.356 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.609 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_48_2' (sobel.cpp:45) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_53_3' (sobel.cpp:45) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_58_4' (sobel.cpp:45) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_59_5' (sobel.cpp:45) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:38) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:38) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:38) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:38) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:38) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:38) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:38) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.216 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_47_1' (sobel.cpp:45:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:54:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:56:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_47_1_VITIS_LOOP_48_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 250.497 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 250.842 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 251.110 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln48) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_47_1_VITIS_LOOP_48_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_47_1_VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 251.422 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 251.843 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 252.182 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.85 seconds. CPU system time: 0.25 seconds. Elapsed time: 0.84 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.12 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.22 seconds; current allocated memory: 225.729 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.53 seconds. CPU system time: 0.32 seconds. Elapsed time: 3.83 seconds; current allocated memory: 227.026 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.027 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.353 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.601 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_48_2' (sobel.cpp:45) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_53_3' (sobel.cpp:45) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_58_4' (sobel.cpp:45) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_59_5' (sobel.cpp:45) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:38) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:38) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:38) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:38) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:38) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:38) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:38) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.202 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_47_1' (sobel.cpp:45:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:54:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:56:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_47_1_VITIS_LOOP_48_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 250.496 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sobel_kernel'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'sobel_kernel'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 250.848 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 251.125 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln48) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_47_1_VITIS_LOOP_48_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_47_1_VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 251.438 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 251.859 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 252.214 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.84 seconds. CPU system time: 0.22 seconds. Elapsed time: 0.83 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.14 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.22 seconds; current allocated memory: 225.729 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.41 seconds. CPU system time: 0.34 seconds. Elapsed time: 3.77 seconds; current allocated memory: 227.011 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.012 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.374 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.571 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 248.172 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 240.878 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln50) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 241.499 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 242.085 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 242.967 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_2_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.17 seconds; current allocated memory: 251.822 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sobel.
+INFO: [VLOG 209-307] Generating Verilog RTL for sobel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 224.97 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.3 seconds. CPU system time: 0.47 seconds. Elapsed time: 5.78 seconds; current allocated memory: 251.945 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.84 seconds. CPU system time: 0.23 seconds. Elapsed time: 0.84 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.14 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.23 seconds; current allocated memory: 225.697 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_50_2' (sobel.cpp:50:20) in function 'sobel' partially with a factor of 2 (sobel.cpp:50:20)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.7 seconds. CPU system time: 0.31 seconds. Elapsed time: 4.01 seconds; current allocated memory: 227.281 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.282 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.808 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.935 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_56_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_62_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 248.711 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:57:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:59:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 241.832 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln50) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('buffer_1_addr_write_ln57', sobel.cpp:57) of variable 'window[1][2]', sobel.cpp:57 on array 'buffer[1]', sobel.cpp:44 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'buffer_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 242.604 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 243.413 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 244.641 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.44 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.46 seconds; current allocated memory: 254.860 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sobel.
+INFO: [VLOG 209-307] Generating Verilog RTL for sobel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 220.02 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 6.2 seconds. CPU system time: 0.44 seconds. Elapsed time: 6.63 seconds; current allocated memory: 255.058 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.85 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.82 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.13 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.23 seconds; current allocated memory: 225.729 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.38 seconds. CPU system time: 0.29 seconds. Elapsed time: 3.68 seconds; current allocated memory: 227.011 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.012 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.374 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 227.570 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.177 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 240.879 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln50) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 241.500 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 242.084 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 242.964 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_2_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.15 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.17 seconds; current allocated memory: 251.819 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sobel.
+INFO: [VLOG 209-307] Generating Verilog RTL for sobel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 224.97 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.27 seconds. CPU system time: 0.46 seconds. Elapsed time: 5.74 seconds; current allocated memory: 251.942 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.87 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.85 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.13 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.23 seconds; current allocated memory: 225.729 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.37 seconds. CPU system time: 0.27 seconds. Elapsed time: 3.64 seconds; current allocated memory: 227.011 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.012 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.374 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.571 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 248.172 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 240.878 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln50) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 241.499 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 242.084 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 242.966 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_2_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.16 seconds; current allocated memory: 251.821 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sobel.
+INFO: [VLOG 209-307] Generating Verilog RTL for sobel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 224.97 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.26 seconds. CPU system time: 0.4 seconds. Elapsed time: 5.66 seconds; current allocated memory: 251.944 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: ==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.82 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.82 seconds; current allocated memory: 224.025 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.199 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.13 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.2 seconds; current allocated memory: 225.697 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:60:21) in function 'sobel' completely with a factor of 3 (sobel.cpp:60:21)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.41 seconds. CPU system time: 0.27 seconds. Elapsed time: 3.69 seconds; current allocated memory: 227.097 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.098 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.477 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 227.664 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_62_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 248.271 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 240.977 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln50) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 241.536 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 242.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 242.972 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_2_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.14 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.17 seconds; current allocated memory: 251.821 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for sobel.
+INFO: [VLOG 209-307] Generating Verilog RTL for sobel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 224.97 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.29 seconds. CPU system time: 0.4 seconds. Elapsed time: 5.69 seconds; current allocated memory: 251.945 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+WARNING: [HLS 200-1504] Ignoring flow_target 'vivado' from previously saved solution
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_offset=slave
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.83 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.81 seconds; current allocated memory: 224.163 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 224.322 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.14 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.2 seconds; current allocated memory: 225.823 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.31 seconds. CPU system time: 0.31 seconds. Elapsed time: 3.62 seconds; current allocated memory: 227.165 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.165 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.562 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 227.762 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 248.413 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 241.358 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=empty) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+WARNING: [SCHED 204-63] Unable to schedule bus read on port 'gmem' (sobel.cpp:53) within the first cycle (II = 1).
+Please consider 1) removing the 'rewind' option from the pipeline, or 2) increasing the target initiation interval of the pipeline.
+WARNING: [SCHED 204-63] Unable to schedule bus write on port 'gmem' (sobel.cpp:78) within the last cycle (II = 1).
+Please consider 1) removing the 'rewind' option in the pipeline, or 2) increasing the initiation interval of the pipeline.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 142, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.25 seconds; current allocated memory: 242.358 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.53 seconds. CPU system time: 0 seconds. Elapsed time: 0.54 seconds; current allocated memory: 243.806 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'src', 'dst', 'rows', 'cols' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'sobel' is 7634 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_10ns_12ns_13s_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.34 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.35 seconds; current allocated memory: 247.587 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+WARNING: [HLS 200-1504] Ignoring flow_target 'vitis' from previously saved solution
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_alignment_byte_size=0
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_max_widen_bitwidth=0
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_offset=off
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_rtl -register_reset_num=0
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.75 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.79 seconds; current allocated memory: 224.274 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.449 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.12 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.22 seconds; current allocated memory: 225.932 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.51 seconds. CPU system time: 0.32 seconds. Elapsed time: 3.83 seconds; current allocated memory: 227.329 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.330 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 228.692 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.888 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 248.490 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 241.196 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln50) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 241.816 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 242.387 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'sobel/rows' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'sobel/cols' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_mul_10ns_12ns_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 243.242 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+WARNING: [HLS 200-1504] Ignoring flow_target 'vivado' from previously saved solution
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.78 seconds. CPU system time: 0.25 seconds. Elapsed time: 0.8 seconds; current allocated memory: 224.226 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.356 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.1 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.2 seconds; current allocated memory: 225.824 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.35 seconds. CPU system time: 0.28 seconds. Elapsed time: 3.64 seconds; current allocated memory: 227.212 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.213 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.610 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 227.810 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.16 seconds; current allocated memory: 248.461 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 241.406 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=empty) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+WARNING: [SCHED 204-63] Unable to schedule bus read on port 'gmem' (sobel.cpp:53) within the first cycle (II = 1).
+Please consider 1) removing the 'rewind' option from the pipeline, or 2) increasing the target initiation interval of the pipeline.
+WARNING: [SCHED 204-63] Unable to schedule bus write on port 'gmem' (sobel.cpp:78) within the last cycle (II = 1).
+Please consider 1) removing the 'rewind' option in the pipeline, or 2) increasing the initiation interval of the pipeline.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 142, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 242.436 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.53 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.54 seconds; current allocated memory: 243.855 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'src', 'dst', 'rows', 'cols' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'sobel' is 7634 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_10ns_12ns_13s_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 247.666 MB.
+INFO==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.82 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.82 seconds; current allocated memory: 224.195 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.357 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.12 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.21 seconds; current allocated memory: 225.856 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.27 seconds. CPU system time: 0.33 seconds. Elapsed time: 3.6 seconds; current allocated memory: 227.183 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.184 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.591 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 227.779 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 248.434 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 241.403 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln68) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+WARNING: [SCHED 204-63] Unable to schedule bus read on port 'gmem' (sobel.cpp:53) within the first cycle (II = 1).
+Please consider 1) removing the 'rewind' option from the pipeline, or 2) increasing the target initiation interval of the pipeline.
+WARNING: [SCHED 204-63] Unable to schedule bus write on port 'gmem' (sobel.cpp:78) within the last cycle (II = 1).
+Please consider 1) removing the 'rewind' option in the pipeline, or 2) increasing the initiation interval of the pipeline.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 142, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 242.425 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.53 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.54 seconds; current allocated memory: 243.958 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'src', 'dst', 'rows', 'cols' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'sobel' is 7634 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_10ns_12ns_13s_20_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 247.816 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.81 seconds. CPU system time: 0.25 seconds. Elapsed time: 0.83 seconds; current allocated memory: 224.231 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 224.422 MB.
+INFO: [HLS 200-10] Analyzing design file 'sobel.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'rows': sobel.cpp:35:108
+WARNING: [HLS 207-5301] unused parameter 'cols': sobel.cpp:35:118
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.13 seconds. CPU system time: 0.13 seconds. Elapsed time: 0.25 seconds; current allocated memory: 225.860 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.33 seconds. CPU system time: 0.34 seconds. Elapsed time: 3.68 seconds; current allocated memory: 227.217 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 227.218 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 228.670 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.816 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_2' (sobel.cpp:47) in function 'sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_55_3' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_4' (sobel.cpp:47) in function 'sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_61_5' (sobel.cpp:47) in function 'sobel' completely with a factor of 2.
+INFO: [XFORM 203-101] Partitioning array 'window' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'right_column' (sobel.cpp:42) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer' (sobel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.0' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.1' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'window.2' (sobel.cpp:40) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'window.0' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.1' (sobel.cpp:40) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.2' (sobel.cpp:40) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 248.466 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_49_1' (sobel.cpp:47:6) in function 'sobel'.
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[1]' (sobel.cpp:56:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'buffer[2]' (sobel.cpp:58:37)
+INFO: [XFORM 203-531] Rewinding loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2' in function 'sobel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 241.380 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'sobel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'.
+WARNING: [SCHED 204-63] Unable to schedule bus read on port 'gmem' (sobel.cpp:53) within the first cycle (II = 1).
+Please consider 1) removing the 'rewind' option from the pipeline, or 2) increasing the target initiation interval of the pipeline.
+WARNING: [SCHED 204-63] Unable to schedule bus write on port 'gmem' (sobel.cpp:78) within the last cycle (II = 1).
+Please consider 1) removing the 'rewind' option in the pipeline, or 2) increasing the initiation interval of the pipeline.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 142, loop 'VITIS_LOOP_49_1_VITIS_LOOP_50_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 242.324 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.54 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.55 seconds; current allocated memory: 243.896 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/dst' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/rows' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'sobel/cols' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'sobel' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'src', 'dst', 'rows', 'cols' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'sobel' is 7698 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.34 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.34 seconds; current allocated memory: 247.695 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_buffer_2_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.64 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.66 seconds; current allocated memory: 258.894 MB.

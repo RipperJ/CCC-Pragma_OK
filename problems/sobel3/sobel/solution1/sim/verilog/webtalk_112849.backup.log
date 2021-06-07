@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon May 31 22:35:08 2021
+# Process ID: 112849
+# Current directory: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog
+# Command line: wbtcv -mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/webtalk.log
+# Journal file: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/webtalk.jou
+#-----------------------------------------------------------
+source /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/xsim.dir/sobel/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon May 31 22:35:09 2021...

@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon May 31 22:35:10 2021
+# Process ID: 112919
+# Current directory: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/sobel/xsim_script.tcl}
+# Log file: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/xsim.log
+# Journal file: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/sobel/xsim_script.tcl
+# xsim {sobel} -autoloadwcfg -tclbatch {sobel.tcl}
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source sobel.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "155000"
+// RTL Simulation : 1 / 1 [100.00%] @ "39746185000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 39746225 ns : File "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/sobel.autotb.v" Line 435
+run: Time (s): cpu = 00:00:00.93 ; elapsed = 00:03:13 . Memory (MB): peak = 2385.262 ; gain = 0.000 ; free physical = 39401 ; free virtual = 81739
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon May 31 22:38:30 2021...
