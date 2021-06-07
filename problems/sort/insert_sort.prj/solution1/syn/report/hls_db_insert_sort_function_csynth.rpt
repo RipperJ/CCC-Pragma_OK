@@ -1,0 +1,157 @@
+
+
+================================================================
+== Vitis HLS Report for 'hls_db_insert_sort_function'
+================================================================
+* Date:           Wed Jun  2 21:25:52 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        insert_sort.prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.013 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------------------+-----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                         |                                               |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                         Instance                        |                     Module                    |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +---------------------------------------------------------+-----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_insert_sort_top_unsigned_int_unsigned_int_4_s_fu_40  |insert_sort_top_unsigned_int_unsigned_int_4_s  |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+        +---------------------------------------------------------+-----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+--------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++---------------------+---------+------+---------+--------+-----+
+|DSP                  |        -|     -|        -|       -|    -|
+|Expression           |        -|     -|        -|       -|    -|
+|FIFO                 |        -|     -|        -|       -|    -|
+|Instance             |        -|     -|      400|    1303|    -|
+|Memory               |        -|     -|        -|       -|    -|
+|Multiplexer          |        -|     -|        -|      68|    -|
+|Register             |        -|     -|        3|       -|    -|
++---------------------+---------+------+---------+--------+-----+
+|Total                |        0|     0|      403|    1371|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available SLR        |     1344|  2976|   871680|  435840|  320|
++---------------------+---------+------+---------+--------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available            |     2688|  5952|  1743360|  871680|  640|
++---------------------+---------+------+---------+--------+-----+
+|Utilization (%)      |        0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------------------+-----------------------------------------------+---------+----+-----+------+-----+
+    |                         Instance                        |                     Module                    | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +---------------------------------------------------------+-----------------------------------------------+---------+----+-----+------+-----+
+    |grp_insert_sort_top_unsigned_int_unsigned_int_4_s_fu_40  |insert_sort_top_unsigned_int_unsigned_int_4_s  |        0|   0|  400|  1303|    0|
+    +---------------------------------------------------------+-----------------------------------------------+---------+----+-----+------+-----+
+    |Total                                                    |                                               |        0|   0|  400|  1303|    0|
+    +---------------------------------------------------------+-----------------------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm             |  14|          3|    1|          3|
+    |din_strm_V_read       |   9|          2|    1|          2|
+    |dout_strm_V_write     |   9|          2|    1|          2|
+    |kin_strm_V_read       |   9|          2|    1|          2|
+    |kout_strm_V_write     |   9|          2|    1|          2|
+    |strm_in_end_V_read    |   9|          2|    1|          2|
+    |strm_out_end_V_write  |   9|          2|    1|          2|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 |  68|         15|    7|         15|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------------------------+---+----+-----+-----------+
+    |                                 Name                                 | FF| LUT| Bits| Const Bits|
+    +----------------------------------------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                                                             |  2|   0|    2|          0|
+    |grp_insert_sort_top_unsigned_int_unsigned_int_4_s_fu_40_ap_start_reg  |  1|   0|    1|          0|
+    +----------------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                                 |  3|   0|    3|          0|
+    +----------------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+-----------------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |        Source Object        |    C Type    |
++-----------------------+-----+-----+------------+-----------------------------+--------------+
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  hls_db_insert_sort_function|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|  hls_db_insert_sort_function|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|  hls_db_insert_sort_function|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|  hls_db_insert_sort_function|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|  hls_db_insert_sort_function|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|  hls_db_insert_sort_function|  return value|
+|din_strm_V_dout        |   in|   32|     ap_fifo|                   din_strm_V|       pointer|
+|din_strm_V_empty_n     |   in|    1|     ap_fifo|                   din_strm_V|       pointer|
+|din_strm_V_read        |  out|    1|     ap_fifo|                   din_strm_V|       pointer|
+|kin_strm_V_dout        |   in|   32|     ap_fifo|                   kin_strm_V|       pointer|
+|kin_strm_V_empty_n     |   in|    1|     ap_fifo|                   kin_strm_V|       pointer|
+|kin_strm_V_read        |  out|    1|     ap_fifo|                   kin_strm_V|       pointer|
+|strm_in_end_V_dout     |   in|    1|     ap_fifo|                strm_in_end_V|       pointer|
+|strm_in_end_V_empty_n  |   in|    1|     ap_fifo|                strm_in_end_V|       pointer|
+|strm_in_end_V_read     |  out|    1|     ap_fifo|                strm_in_end_V|       pointer|
+|dout_strm_V_din        |  out|   32|     ap_fifo|                  dout_strm_V|       pointer|
+|dout_strm_V_full_n     |   in|    1|     ap_fifo|                  dout_strm_V|       pointer|
+|dout_strm_V_write      |  out|    1|     ap_fifo|                  dout_strm_V|       pointer|
+|kout_strm_V_din        |  out|   32|     ap_fifo|                  kout_strm_V|       pointer|
+|kout_strm_V_full_n     |   in|    1|     ap_fifo|                  kout_strm_V|       pointer|
+|kout_strm_V_write      |  out|    1|     ap_fifo|                  kout_strm_V|       pointer|
+|strm_out_end_V_din     |  out|    1|     ap_fifo|               strm_out_end_V|       pointer|
+|strm_out_end_V_full_n  |   in|    1|     ap_fifo|               strm_out_end_V|       pointer|
+|strm_out_end_V_write   |  out|    1|     ap_fifo|               strm_out_end_V|       pointer|
+|sign                   |   in|    1|     ap_none|                         sign|        scalar|
++-----------------------+-----+-----+------------+-----------------------------+--------------+
+

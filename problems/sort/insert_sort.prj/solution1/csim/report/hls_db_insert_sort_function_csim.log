@@ -1,0 +1,21 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../insert_sort_test.cpp in debug mode
+   Compiling ../../../../top.cpp in debug mode
+   Generating csim.exe
+ random test data generated! 
+testVector List:
+Index=0 Vector=1804289383
+Index=1 Vector=846930886
+Index=2 Vector=1681692777
+Index=3 Vector=1714636915
+Index=4 Vector=1957747793
+Index=5 Vector=424238335
+Index=6 Vector=719885386
+Index=7 Vector=1649760492
+Yes
+
+PASS: no error found.
+The maximum depth reached by any of the 10 hls::stream() instances in the design is 9
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

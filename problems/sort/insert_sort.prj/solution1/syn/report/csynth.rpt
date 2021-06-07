@@ -1,0 +1,26 @@
+
+
+================================================================
+== Synthesis Summary Report of 'hls_db_insert_sort_function'
+================================================================
++ General Information: 
+    * Date:           Wed Jun  2 21:25:52 2021
+    * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+    * Project:        insert_sort.prj
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcu50-fsvh2104-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------------------------------+------+-------+---------+--------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |                           Modules                          | Issue|       | Latency | Latency| Iteration|         | Trip |          |      |    |           |            |     |
+    |                           & Loops                          | Type | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |     LUT    | URAM|
+    +------------------------------------------------------------+------+-------+---------+--------+----------+---------+------+----------+------+----+-----------+------------+-----+
+    |+ hls_db_insert_sort_function                               |     -|  -0.42|        -|       -|         -|        -|     -|        no|     -|   -|  403 (~0%)|  1371 (~0%)|    -|
+    | + grp_insert_sort_top_unsigned_int_unsigned_int_4_s_fu_40  |     -|  -0.42|        -|       -|         -|        -|     -|        no|     -|   -|  400 (~0%)|  1303 (~0%)|    -|
+    |  o insert_loop                                             |     -|  -2.43|        -|       -|         3|        1|     -|       yes|     -|   -|          -|           -|    -|
+    +------------------------------------------------------------+------+-------+---------+--------+----------+---------+------+----------+------+----+-----------+------------+-----+
+

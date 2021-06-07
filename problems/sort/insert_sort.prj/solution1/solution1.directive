@@ -1,0 +1,10 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="hls_db_insert_sort_function" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="hls_db_insert_sort_function"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

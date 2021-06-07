@@ -1,0 +1,190 @@
+ random test data generated! 
+testVector List:
+Index=0 Vector=1804289383
+Index=1 Vector=846930886
+Index=2 Vector=1681692777
+Index=3 Vector=1714636915
+Index=4 Vector=1957747793
+Index=5 Vector=424238335
+Index=6 Vector=719885386
+Index=7 Vector=1649760492
+Yes
+
+PASS: no error found.
+The maximum depth reached by any of the 10 hls::stream() instances in the design is 9
+#: 30; @: -exec xelab xil_defaultlib.apatb_hls_db_insert_sort_function_top glbl -prj hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -exec RDI_ARGS: 
+RDI_PROG=xelab
+#: 28; @: xil_defaultlib.apatb_hls_db_insert_sort_function_top glbl -prj hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: xil_defaultlib.apatb_hls_db_insert_sort_function_top RDI_ARGS: 
+#: 27; @: glbl -prj hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: glbl RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 26; @: -prj hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -prj RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 25; @: hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: hls_db_insert_sort_function.prj RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 24; @: -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 23; @: smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: smartconnect_v1_0 RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 22; @: -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 21; @: axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: axi_protocol_checker_v1_1_12 RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 20; @: -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 19; @: axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: axi_protocol_checker_v1_1_13 RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 18; @: -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 17; @: axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: axis_protocol_checker_v1_1_11 RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 16; @: -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 15; @: axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: axis_protocol_checker_v1_1_12 RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 14; @: -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 13; @: xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: xil_defaultlib RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 12; @: -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 11; @: unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: unisims_ver RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 10; @: -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 9; @: xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: xpm RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 8; @: -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 7; @: floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: floating_point_v7_0_18 RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 6; @: -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: -L RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 5; @: floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: floating_point_v7_1_11 RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 4; @: --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: --lib RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 3; @: ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function; 1: ieee_proposed=./ieee_proposed RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 2; @: -s hls_db_insert_sort_function; 1: -s RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+#: 1; @: hls_db_insert_sort_function; 1: hls_db_insert_sort_function RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+Final RDI_ARGS: xil_defaultlib.apatb_hls_db_insert_sort_function_top
+RDI_JAVAROOT: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+RDI_DATADIR: /home/lduac/Software/Xilinx/Vivado/2020.2/data
+RDI_LIBDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o
+RDI_BINDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/bin
+LD_LIBRARY_PATH: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/gdb_v7_2:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/dot-2.28/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/bin:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib//server:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/lib/csim:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v6_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/csim:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib
+:xil_defaultlib.apatb_hls_db_insert_sort_function_top glbl -prj hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function
+@: xil_defaultlib.apatb_hls_db_insert_sort_function_top glbl -prj hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/lduac/Software/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_hls_db_insert_sort_function_top glbl -prj hls_db_insert_sort_function.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s hls_db_insert_sort_function 
+Multi-threading is on. Using 30 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/hls_db_insert_sort_function_insert_sort_top_unsigned_int_unsigned_int_4_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hls_db_insert_sort_function_insert_sort_top_unsigned_int_unsigned_int_4_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/AESL_autofifo_strm_out_end_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_strm_out_end_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/AESL_autofifo_kin_strm_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_kin_strm_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/AESL_autofifo_kout_strm_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_kout_strm_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/AESL_autofifo_din_strm_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_din_strm_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/hls_db_insert_sort_function.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_hls_db_insert_sort_function_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/hls_db_insert_sort_function.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hls_db_insert_sort_function
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/AESL_autofifo_strm_in_end_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_strm_in_end_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/AESL_autofifo_dout_strm_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_autofifo_dout_strm_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/sample_manager.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/df_process_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/df_process_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/df_fifo_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/dump_file_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [df_fifo_interface.sv:4]
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/df_fifo_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [df_fifo_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/csv_file_dump.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/sample_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/nodf_module_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/nodf_module_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/nodf_module_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/nodf_module_interface.sv:4]
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.hls_db_insert_sort_function_inse...
+Compiling module xil_defaultlib.hls_db_insert_sort_function
+Compiling module xil_defaultlib.AESL_autofifo_din_strm_V
+Compiling module xil_defaultlib.AESL_autofifo_kin_strm_V
+Compiling module xil_defaultlib.AESL_autofifo_strm_in_end_V
+Compiling module xil_defaultlib.AESL_autofifo_dout_strm_V
+Compiling module xil_defaultlib.AESL_autofifo_kout_strm_V
+Compiling module xil_defaultlib.AESL_autofifo_strm_out_end_V
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_hls_db_insert_sort_functio...
+Compiling module work.glbl
+Built simulation snapshot hls_db_insert_sort_function
+#: 7; @: -exec wbtcv -mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace; 1: -exec RDI_ARGS: 
+RDI_PROG=wbtcv
+#: 5; @: -mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace; 1: -mode RDI_ARGS: 
+#: 4; @: batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace; 1: batch RDI_ARGS: -mode
+#: 3; @: -source /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace; 1: -source RDI_ARGS: -mode
+#: 2; @: /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace; 1: /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl RDI_ARGS: -mode
+#: 1; @: -notrace; 1: -notrace RDI_ARGS: -mode
+Final RDI_ARGS: -mode
+RDI_JAVAROOT: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+RDI_DATADIR: /home/lduac/Software/Xilinx/Vivado/2020.2/data
+RDI_LIBDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o
+RDI_BINDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/bin
+LD_LIBRARY_PATH: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/javafx-sdk-11.0.2/lib:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/lib//server:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/gdb_v7_2:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/dot-2.28/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/bin:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib//server:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/lib/csim:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v6_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/csim:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib
+:-mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace
+@: -mode batch -source /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/xsim.dir/hls_db_insert_sort_function/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Jun  2 21:26:09 2021...
+#: 6; @: -exec xsim --noieeewarnings hls_db_insert_sort_function -tclbatch hls_db_insert_sort_function.tcl; 1: -exec RDI_ARGS: 
+RDI_PROG=xsim
+#: 4; @: --noieeewarnings hls_db_insert_sort_function -tclbatch hls_db_insert_sort_function.tcl; 1: --noieeewarnings RDI_ARGS: 
+#: 3; @: hls_db_insert_sort_function -tclbatch hls_db_insert_sort_function.tcl; 1: hls_db_insert_sort_function RDI_ARGS: --noieeewarnings
+#: 2; @: -tclbatch hls_db_insert_sort_function.tcl; 1: -tclbatch RDI_ARGS: --noieeewarnings
+#: 1; @: hls_db_insert_sort_function.tcl; 1: hls_db_insert_sort_function.tcl RDI_ARGS: --noieeewarnings
+Final RDI_ARGS: --noieeewarnings
+RDI_JAVAROOT: /home/lduac/Software/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+RDI_DATADIR: /home/lduac/Software/Xilinx/Vivado/2020.2/data
+RDI_LIBDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vivado/2020.2/lib/lnx64.o
+RDI_BINDIR: /home/lduac/Software/Xilinx/Vivado/2020.2/bin
+LD_LIBRARY_PATH: /home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/gdb_v7_2:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/dot-2.28/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/bin:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o/Ubuntu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lib/lnx64.o:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib/:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/tps/lnx64/jre11.0.2/lib//server:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/bin/../lnx64/tools/dot/lib:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/lib/csim:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fpo_v6_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fir_v7_0:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/tools/dds_v6_0:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/lnx64/csim:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/home/lduac/Software/Xilinx/Vivado/2020.2/bin/../lnx64/tools/dot/lib
+:--noieeewarnings hls_db_insert_sort_function -tclbatch hls_db_insert_sort_function.tcl
+@: --noieeewarnings hls_db_insert_sort_function -tclbatch hls_db_insert_sort_function.tcl
+
+****** xsim v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/hls_db_insert_sort_function/xsim_script.tcl
+# xsim {hls_db_insert_sort_function} -autoloadwcfg -tclbatch {hls_db_insert_sort_function.tcl}
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source hls_db_insert_sort_function.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "109000"
+// RTL Simulation : 1 / 1 [n/a] @ "169000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 182030 ps : File "/home/lduac/Projects/CCC-Pragma_OK/problems/sort1/insert_sort.prj/solution1/sim/verilog/hls_db_insert_sort_function.autotb.v" Line 554
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Jun  2 21:26:18 2021...
+ random test data generated! 
+testVector List:
+Index=0 Vector=1804289383
+Index=1 Vector=846930886
+Index=2 Vector=1681692777
+Index=3 Vector=1714636915
+Index=4 Vector=1957747793
+Index=5 Vector=424238335
+Index=6 Vector=719885386
+Index=7 Vector=1649760492
+
+PASS: no error found.
+The maximum depth reached by any of the 10 hls::stream() instances in the design is 9

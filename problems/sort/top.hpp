@@ -1,5 +1,6 @@
 #include <vector> // std::vector
 #include <iostream>
+#include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -13,8 +14,10 @@ typedef uint32_t DATA_TYPE;
 /// @brief basic sort operators
 enum InsertSortOrder { SORT_ASCENDING = 1, SORT_DESCENDING = 0 };
 
-#define MaxSortNumber 1024
-#define TestNumber 4044
+// #define MaxSortNumber 1024
+// #define TestNumber 4044
+#define MaxSortNumber 4
+#define TestNumber 8
 #define OP SORT_ASCENDING
 
 void hls_db_insert_sort_function(hls::stream<DATA_TYPE>& din_strm,

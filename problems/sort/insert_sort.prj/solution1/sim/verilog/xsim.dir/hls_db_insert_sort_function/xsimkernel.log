@@ -1,0 +1,7 @@
+Running: xsim.dir/hls_db_insert_sort_function/xsimk -simmode gui -wdb hls_db_insert_sort_function.wdb -simrunnum 0 -socket 46057
+Design successfully loaded
+Design Loading Memory Usage: 36744 KB (Peak: 36752 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 119448 KB (Peak: 176012 KB)
+Simulation CPU Usage: 0 ms

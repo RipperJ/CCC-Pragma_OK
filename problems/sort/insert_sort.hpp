@@ -35,6 +35,7 @@ void insert_sort_top(hls::stream<Data_Type>& din_strm,
                      hls::stream<Key_Type>& kout_strm,
                      hls::stream<bool>& strm_out_end,
                      bool sign) {
+    std::cout << "Yes" << std::endl;
     bool end;
     Key_Type in_temp, out_temp;
     Data_Type in_dtemp, out_dtemp;
@@ -137,6 +138,7 @@ void insert_sort_top(hls::stream<Key_Type>& kin_strm,
                      hls::stream<Key_Type>& kout_strm,
                      hls::stream<bool>& strm_out_end,
                      bool sign) {
+    std::cout << "Yeah" << std::endl;
     bool end;
     Key_Type in_temp, out_temp;
     bool array_full = 0;

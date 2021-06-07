@@ -1,0 +1,55 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-10] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1510] Running: create_clock -period 3.33 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 2.72 seconds. CPU system time: 0.41 seconds. Elapsed time: 2.93 seconds; current allocated memory: 223.114 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 223.313 MB.
+INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.15 seconds. CPU system time: 0.41 seconds. Elapsed time: 4.57 seconds; current allocated memory: 224.981 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::stream<bool, 0>::read(bool&)' into 'hls::stream<bool, 0>::read()' (/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<unsigned int, 0>::read(unsigned int&)' into 'hls::stream<unsigned int, 0>::read()' (/home/lduac/Software/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<bool, 0>::read()' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:55:23)
+INFO: [HLS 214-131] Inlining function 'hls::stream<bool, 0>::write(bool const&)' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:132:18)
+INFO: [HLS 214-131] Inlining function 'hls::stream<bool, 0>::write(bool const&)' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:114:26)
+INFO: [HLS 214-131] Inlining function 'hls::stream<unsigned int, 0>::write(unsigned int const&)' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:113:23)
+INFO: [HLS 214-131] Inlining function 'hls::stream<unsigned int, 0>::write(unsigned int const&)' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:112:23)
+INFO: [HLS 214-131] Inlining function 'hls::stream<bool, 0>::read()' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:65:31)
+INFO: [HLS 214-131] Inlining function 'hls::stream<unsigned int, 0>::read()' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:64:33)
+INFO: [HLS 214-131] Inlining function 'hls::stream<unsigned int, 0>::read()' into 'void xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (./insert_sort.hpp:63:32)
+INFO: [HLS 214-131] Inlining function 'void xf::database::insertSort<unsigned int, unsigned int, 4>(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' into 'hls_db_insert_sort_function(hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, hls::stream<unsigned int, 0>&, hls::stream<unsigned int, 0>&, hls::stream<bool, 0>&, bool)' (top.cpp:26:5)
+INFO: [HLS 214-186] Unrolling loop 'initial_sign_loop' (./insert_sort.hpp:71:9) in function 'xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>' completely with a factor of 3 (./insert_sort.hpp:71:9)
+INFO: [HLS 214-186] Unrolling loop 'right_shift_insert_loop' (./insert_sort.hpp:95:9) in function 'xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>' completely with a factor of 3 (./insert_sort.hpp:95:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.47 seconds. CPU system time: 0.26 seconds. Elapsed time: 3.73 seconds; current allocated memory: 225.446 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 225.447 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 227.538 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 227.889 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./insert_sort.hpp:41:15) to (./insert_sort.hpp:111:13) in function 'xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./insert_sort.hpp:119:13) to (./insert_sort.hpp:58:5) in function 'xf::database::details::insert_sort_top<unsigned int, unsigned int, 4>'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.22 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.23 seconds; current allocated memory: 249.602 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 252.477 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'hls_db_insert_sort_function' ...
+WARNING: [SYN 201-103] Legalizing function name 'insert_sort_top<unsigned int, unsigned int, 4>' to 'insert_sort_top_unsigned_int_unsigned_int_4_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'insert_sort_top_unsigned_int_unsigned_int_4_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'insert_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'insert_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 253.056 MB.
+INFO: 
