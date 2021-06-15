@@ -1,0 +1,54 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'sobel'" level="0">
+<item name = "Date">Sat Jun 12 14:59:13 2021
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
+<item name = "Project">sobel</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu50-fsvh2104-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 3.965 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">461522, 461523, 4.615 ms, 4.615 ms, 461520, 461520, loop rewind stp(delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="sumx_a_1_crop_fu_361">crop, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="sumy_a_1_crop_fu_366">crop, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="sumx_b_1_crop_fu_371">crop, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="sumy_b_1_crop_fu_376">crop, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="temp_a_adder_fu_381">adder, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="temp_b_adder_fu_389">adder, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="pout_a_crop_upper_fu_397">crop_upper, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="pout_b_crop_upper_fu_402">crop_upper, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_72_1_VITIS_LOOP_73_2">461522, 461522, 4, 1, 1, 461520, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

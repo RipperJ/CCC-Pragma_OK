@@ -1,0 +1,122 @@
+
+
+================================================================
+== Vitis HLS Report for 'crop'
+================================================================
+* Date:           Sat Jun 12 14:59:13 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        sobel
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  0.884 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.88>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%in_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %in_r" [sobel.cpp:25]   --->   Operation 2 'read' 'in_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns) (grouped into LUT with out node out)   --->   "%trunc_ln25 = trunc i16 %in_read" [sobel.cpp:25]   --->   Operation 3 'trunc' 'trunc_ln25' <Predicate = (!or_ln29)> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns) (grouped into LUT with out node out)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i16.i32, i16 %in_read, i32 15" [sobel.cpp:29]   --->   Operation 4 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp_4 = partselect i8 @_ssdm_op_PartSelect.i8.i16.i32.i32, i16 %in_read, i32 8, i32 15" [sobel.cpp:29]   --->   Operation 5 'partselect' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.58ns)   --->   "%icmp_ln29 = icmp_sgt  i8 %tmp_4, i8 0" [sobel.cpp:29]   --->   Operation 6 'icmp' 'icmp_ln29' <Predicate = true> <Delay = 0.58> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 7 [1/1] (0.00ns) (grouped into LUT with out node out)   --->   "%tmp_5 = bitselect i1 @_ssdm_op_BitSelect.i1.i16.i32, i16 %in_read, i32 15" [sobel.cpp:29]   --->   Operation 7 'bitselect' 'tmp_5' <Predicate = (or_ln29)> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns) (grouped into LUT with out node out)   --->   "%xor_ln29 = xor i1 %tmp_5, i1 1" [sobel.cpp:29]   --->   Operation 8 'xor' 'xor_ln29' <Predicate = (or_ln29)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (0.00ns) (grouped into LUT with out node out)   --->   "%select_ln29 = select i1 %xor_ln29, i8 255, i8 0" [sobel.cpp:29]   --->   Operation 9 'select' 'select_ln29' <Predicate = (or_ln29)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (0.00ns) (grouped into LUT with out node out)   --->   "%or_ln29 = or i1 %tmp, i1 %icmp_ln29" [sobel.cpp:29]   --->   Operation 10 'or' 'or_ln29' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.30ns) (out node of the LUT)   --->   "%out = select i1 %or_ln29, i8 %select_ln29, i8 %trunc_ln25" [sobel.cpp:29]   --->   Operation 11 'select' 'out' <Predicate = true> <Delay = 0.30> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%ret_ln30 = ret i8 %out" [sobel.cpp:30]   --->   Operation 12 'ret' 'ret_ln30' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.884ns
+The critical path consists of the following:
+	wire read on port 'in_r' (sobel.cpp:25) [2]  (0 ns)
+	'icmp' operation ('icmp_ln29', sobel.cpp:29) [6]  (0.581 ns)
+	'or' operation ('or_ln29', sobel.cpp:29) [10]  (0 ns)
+	'select' operation ('out', sobel.cpp:29) [11]  (0.303 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

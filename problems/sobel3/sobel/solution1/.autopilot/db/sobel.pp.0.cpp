@@ -205,17 +205,18 @@ __attribute__((sdx_kernel("sobel", 0))) void sobel(PIXEL src[720*1280], PIXEL ds
 
  VITIS_LOOP_49_1: for (row = 0; row < 720; row++) {
   VITIS_LOOP_50_2: for (col = 0; col < 1280; col++) {
+#pragma HLS latency min=1 max=2
 #pragma HLS PIPELINE II=1 rewind
 
  pin = src[index_in];
 
-   VITIS_LOOP_55_3: for (k = 0; k < 2; k++) {
+   VITIS_LOOP_56_3: for (k = 0; k < 2; k++) {
     right_column[k] = buffer[k][col] = buffer[k + 1][col];
    }
    right_column[2] = buffer[2][col] = pin;
 
-   VITIS_LOOP_60_4: for (i = 0; i < 3; i++) {
-    VITIS_LOOP_61_5: for (j = 0; j < 2; j++) {
+   VITIS_LOOP_61_4: for (i = 0; i < 3; i++) {
+    VITIS_LOOP_62_5: for (j = 0; j < 2; j++) {
      window[i][j] = window[i][j + 1];
     }
     window[i][2] = right_column[i];

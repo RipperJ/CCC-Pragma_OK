@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1623222711329">
+  <ports id="1" name="in_r" type="PortType" originalName="in" coreId="1088298048" bitwidth="9">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="9" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="12" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="15" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="18" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="19" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@ports.1"/>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="24" pipe_depth="1" RegionName="crop_upper">
+    <basic_blocks id="6" name="crop_upper" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="2" name="in_read" lineNumber="40" originalName="in" fileName="sobel.cpp" fileDirectory=".." coreId="1088585408" contextFuncName="crop_upper" bitwidth="9" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="40" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_upper"/>
+        <dataInputObjs>in_r</dataInputObjs>
+        <dataOutputObjs>bitselect</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="3" name="tmp" lineNumber="43" fileName="sobel.cpp" fileDirectory=".." rtlName="tmp_fu_16_p3" coreId="49" contextFuncName="crop_upper" bitwidth="1" opcode="bitselect" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="43" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_upper"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="4" name="out" lineNumber="43" originalName="out" fileName="sobel.cpp" fileDirectory=".." rtlName="ap_return" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="crop_upper" bitwidth="9" opcode="select" m_display="0" m_delay="0.3" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="43" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_upper"/>
+        <dataInputObjs>bitselect</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>ret</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="5" name="_ln44" lineNumber="44" fileName="sobel.cpp" fileDirectory=".." coreId="1088445920" contextFuncName="crop_upper" opcode="ret" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="44" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_upper"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>ap_return</dataOutputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="sobel.cpp">
+        <validLinenumbers>40</validLinenumbers>
+        <validLinenumbers>43</validLinenumbers>
+        <validLinenumbers>44</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <expressionNodes realName="tmp_fu_16">
+    <nodeIds>3</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="out_fu_24">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="in_read_read_fu_10">
+    <nodeIds>2</nodeIds>
+  </ioNodes>
+  <ioPorts name="in_r">
+    <contents name="read">
+      <nodeIds>2</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>5</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="2" stage="1" latency="1"/>
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="crop_upper" mII="1" mDepth="1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>6</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

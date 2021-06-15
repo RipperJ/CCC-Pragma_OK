@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1623071285328">
+  <ports id="1" name="in_r" type="PortType" originalName="in" coreId="2430355104" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="10" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="11" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="14" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="17" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="20" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="21" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@ports.1"/>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="27" pipe_depth="1" RegionName="crop_lower">
+    <basic_blocks id="7" name="crop_lower" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="2" name="in_read" lineNumber="25" originalName="in" fileName="sobel.cpp" fileDirectory=".." coreId="2430406752" contextFuncName="crop_lower" bitwidth="16" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="25" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_lower"/>
+        <dataInputObjs>in_r</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>bitselect</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="3" name="trunc_ln25" lineNumber="25" fileName="sobel.cpp" fileDirectory=".." rtlName="trunc_ln25_fu_16_p1" coreId="0" contextFuncName="crop_lower" bitwidth="15" opcode="trunc" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="25" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_lower"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="4" name="tmp" lineNumber="29" fileName="sobel.cpp" fileDirectory=".." rtlName="tmp_fu_20_p3" coreId="20" contextFuncName="crop_lower" bitwidth="1" opcode="bitselect" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="29" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_lower"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="5" name="out" lineNumber="29" originalName="out" fileName="sobel.cpp" fileDirectory=".." rtlName="ap_return" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="crop_lower" bitwidth="15" opcode="select" m_display="0" m_delay="0.29" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="29" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_lower"/>
+        <dataInputObjs>bitselect</dataInputObjs>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>ret</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="6" name="_ln30" lineNumber="30" fileName="sobel.cpp" fileDirectory=".." coreId="0" contextFuncName="crop_lower" opcode="ret" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="30" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="crop_lower"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>ap_return</dataOutputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="sobel.cpp">
+        <validLinenumbers>25</validLinenumbers>
+        <validLinenumbers>29</validLinenumbers>
+        <validLinenumbers>30</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <expressionNodes realName="tmp_fu_20">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="out_fu_28">
+    <nodeIds>5</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln25_fu_16">
+    <nodeIds>3</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="in_read_read_fu_10">
+    <nodeIds>2</nodeIds>
+  </ioNodes>
+  <ioPorts name="in_r">
+    <contents name="read">
+      <nodeIds>2</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>6</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="2" stage="1" latency="1"/>
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="crop_lower" mII="1" mDepth="1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>7</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

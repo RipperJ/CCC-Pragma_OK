@@ -59,6 +59,7 @@ void sobel(PIXEL src[720*1280], PIXEL dst[(720 -2)*(1280 -2)], int rows, int col
 
  for (row = 0; row < 720; row++) {
   for (col = 0; col < 1280; col++) {
+#pragma HLS latency min=1 max=2
 #pragma HLS PIPELINE II=1 rewind
 
    pin = src[index_in];
@@ -115,5 +116,5 @@ apatb_sobel_ir(src, dst, rows, cols);
 return ;
 }
 #endif
-# 86 "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel.cpp"
+# 87 "/home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel.cpp"
 

@@ -22,10 +22,33 @@ PIXEL sobel_kernel(PIXEL window[][3]) {
 	return sum;
 }
 
+PIXEL crop(PIXEL in) {
+	// #pragma HLS interface ...
+	#pragma HLS INLINE off
+	PIXEL out;
+	out = (in < 0) ? 0 : ((in > 255) ? 255 : in);
+	return out;
+}
+
+PIXEL adder(PIXEL sumx, PIXEL sumy) {
+	#pragma HLS INLINE off
+	PIXEL out;
+	out = sumx + sumy;
+	return out;
+}
+
+PIXEL crop_upper(PIXEL in) {
+	#pragma HLS INLINE off
+	PIXEL out;
+	out = (in > 255) ? 255 : in;
+	return out;
+}
+
 void sobel(PIXEL src[HEIGHT*WIDTH], PIXEL dst[(HEIGHT-2)*(WIDTH-2)], int rows, int cols)
 {
 #pragma HLS RESOURCE variable=src core=RAM_2P
 	PIXEL sumx_a = 0, sumy_a = 0, sumx_b = 0, sumy_b = 0;
+	PIXEL temp_a, temp_b;
 
 	PIXEL pin_a = 0, pout_a = 0;
 	PIXEL window_a[3][3];
@@ -55,6 +78,7 @@ void sobel(PIXEL src[HEIGHT*WIDTH], PIXEL dst[(HEIGHT-2)*(WIDTH-2)], int rows, i
 			pin_b = src[index_in_b];
 
 			for (k = 0; k < 2; k++) {
+		#pragma HLS unroll
 				right_column_a[k] = buffer_a[k][col] = buffer_a[k + 1][col];
 				right_column_b[k] = buffer_b[k][col] = buffer_b[k + 1][col];
 			}
@@ -62,7 +86,9 @@ void sobel(PIXEL src[HEIGHT*WIDTH], PIXEL dst[(HEIGHT-2)*(WIDTH-2)], int rows, i
 			right_column_b[2] = buffer_b[2][col] = pin_b;
 
 			for (i = 0; i < 3; i++) {
+		#pragma HLS unroll
 				for (j = 0; j < 2; j++) {
+		#pragma HLS unroll
 					window_a[i][j] = window_a[i][j + 1];
 					window_b[i][j] = window_b[i][j + 1];
 				}
@@ -79,18 +105,28 @@ void sobel(PIXEL src[HEIGHT*WIDTH], PIXEL dst[(HEIGHT-2)*(WIDTH-2)], int rows, i
 				sumx_a = (window_a[0][2] + window_a[1][2] + window_a[1][2] + window_a[2][2]) - (window_a[0][0] + window_a[1][0] + window_a[1][0] + window_a[2][0]);
 				sumy_a = (window_a[2][0] + window_a[2][1] + window_a[2][1] + window_a[2][2]) - (window_a[0][0] + window_a[0][1] + window_a[0][1] + window_a[0][2]);
 
-				sumx_a = (sumx_a < 0) ? 0 : ((sumx_a > 255) ? 255 : sumx_a);
-				sumy_a = (sumy_a < 0) ? 0 : ((sumy_a > 255) ? 255 : sumy_a);
-				pout_a = (sumx_a + sumy_a > 255) ? 255 : sumx_a + sumy_a;
+				// sumx_a = (sumx_a < 0) ? 0 : ((sumx_a > 255) ? 255 : sumx_a);
+				// sumy_a = (sumy_a < 0) ? 0 : ((sumy_a > 255) ? 255 : sumy_a);
+				sumx_a = crop(sumx_a);
+				sumy_a = crop(sumy_a);
+				// temp_a = sumx_a + sumy_a;
+				temp_a = adder(sumx_a, sumy_a);
+				// pout_a = (temp_a > 255) ? 255 : temp_a;
+				pout_a = crop_upper(temp_a);
 
 				dst[index_out_a] = pout_a;
 
 				sumx_b = (window_b[0][2] + window_b[1][2] + window_b[1][2] + window_b[2][2]) - (window_b[0][0] + window_b[1][0] + window_b[1][0] + window_b[2][0]);
 				sumy_b = (window_b[2][0] + window_b[2][1] + window_b[2][1] + window_b[2][2]) - (window_b[0][0] + window_b[0][1] + window_b[0][1] + window_b[0][2]);
 
-				sumx_b = (sumx_b < 0) ? 0 : ((sumx_b > 255) ? 255 : sumx_b);
-				sumy_b = (sumy_b < 0) ? 0 : ((sumy_b > 255) ? 255 : sumy_b);
-				pout_b = (sumx_b + sumy_b > 255) ? 255 : sumx_b + sumy_b;
+				// sumx_b = (sumx_b < 0) ? 0 : ((sumx_b > 255) ? 255 : sumx_b);
+				// sumy_b = (sumy_b < 0) ? 0 : ((sumy_b > 255) ? 255 : sumy_b);
+				sumx_b = crop(sumx_b);
+				sumy_b = crop(sumy_b);
+				// temp_b = sumx_b + sumy_b;
+				temp_b = adder(sumx_b, sumy_b);
+				// pout_b = (temp_b > 255) ? 255 : temp_b;
+				pout_b = crop_upper(temp_b);
 
 				dst[index_out_b] = pout_b;
 			}

@@ -2,8 +2,8 @@
 # xsim v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon May 31 22:35:10 2021
-# Process ID: 112919
+# Start of session at: Mon Jun  7 18:18:10 2021
+# Process ID: 52036
 # Current directory: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog
 # Command line: xsim -mode tcl -source {xsim.dir/sobel/xsim_script.tcl}
 # Log file: /home/lduac/Projects/CCC-Pragma_OK/problems/sobel3/sobel/solution1/sim/verilog/xsim.log

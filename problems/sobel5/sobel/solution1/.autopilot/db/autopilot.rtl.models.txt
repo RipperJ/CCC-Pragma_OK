@@ -1,0 +1,7 @@
+sobel_mul_mul_10ns_12ns_20_4_1
+sobel_buffer_a_1
+sobel_buffer_a_2
+crop
+adder
+crop_upper
+sobel

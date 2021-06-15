@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1623222711309">
+  <ports id="1" name="sumx" type="PortType" originalName="sumx" coreId="1088330048" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="sumy" type="PortType" originalName="sumy" coreId="1088292400" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="12" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="12" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="14" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="15" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="16" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="17" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="18" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="19" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@ports.2"/>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="27" pipe_depth="1" RegionName="adder">
+    <basic_blocks id="9" name="adder" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="3" name="sumy_read" lineNumber="33" originalName="sumy" fileName="sobel.cpp" fileDirectory=".." coreId="0" contextFuncName="adder" bitwidth="8" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="33" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="adder"/>
+        <dataInputObjs>sumy</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="4" name="sumx_read" lineNumber="33" originalName="sumx" fileName="sobel.cpp" fileDirectory=".." coreId="1088290256" contextFuncName="adder" bitwidth="8" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="33" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="adder"/>
+        <dataInputObjs>sumx</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="5" name="zext_ln33" lineNumber="33" fileName="sobel.cpp" fileDirectory=".." rtlName="zext_ln33_fu_18_p1" coreId="1701601903" contextFuncName="adder" bitwidth="9" opcode="zext" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="33" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="adder"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="6" name="zext_ln33_1" lineNumber="33" fileName="sobel.cpp" fileDirectory=".." rtlName="zext_ln33_1_fu_22_p1" coreId="1088353592" contextFuncName="adder" bitwidth="9" opcode="zext" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="33" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="adder"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="7" name="out" lineNumber="36" originalName="out" fileName="sobel.cpp" fileDirectory=".." rtlName="ap_return" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="adder" bitwidth="9" opcode="add" m_display="0" m_delay="0.7" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="36" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="adder"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>ret</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="8" name="_ln37" lineNumber="37" fileName="sobel.cpp" fileDirectory=".." coreId="961" contextFuncName="adder" opcode="ret" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="sobel.cpp" linenumber="37" fileDirectory="/home/lduac/Projects/CCC-Pragma_OK/problems/sobel5" functionName="adder"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>ap_return</dataOutputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="sobel.cpp">
+        <validLinenumbers>33</validLinenumbers>
+        <validLinenumbers>36</validLinenumbers>
+        <validLinenumbers>37</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <expressionNodes realName="zext_ln33_fu_18">
+    <nodeIds>5</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln33_1_fu_22">
+    <nodeIds>6</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="out_fu_26">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="sumy_read_read_fu_6">
+    <nodeIds>3</nodeIds>
+  </ioNodes>
+  <ioNodes realName="sumx_read_read_fu_12">
+    <nodeIds>4</nodeIds>
+  </ioNodes>
+  <ioPorts name="sumx">
+    <contents name="read">
+      <nodeIds>4</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="sumy">
+    <contents name="read">
+      <nodeIds>3</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>8</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="adder" mII="1" mDepth="1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>9</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

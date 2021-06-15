@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/lduac/Projects/CCC-Pragma_OK/problems/sobel5/sobel/solution1/./sim/autowrap/testbench/sobel.cpp_pre.cpp.tb.cpp
